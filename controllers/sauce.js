@@ -20,3 +20,9 @@ exports.createSauce = (req, res, next) => {
     .then(() => { res.status(201).json({massage: 'Sauce crée !'})})
     .catch((error) => res.status(400).json({error}))
 }
+
+exports.getOneSauce = (req, res, next) => {
+    Sauce.findOne({ _id: req.params.id })
+        .then((sauces) => { res.status(200).json(sauces) })
+        .catch((error) => { res.status(400).json({error})})
+}
