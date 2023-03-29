@@ -5,6 +5,7 @@ const path = require('path');
 const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 
+
 const app = express();
 
 app.use(express.json()) // Donne accès à req.body
@@ -25,7 +26,7 @@ mongoose.connect('mongodb+srv://mathieuhatstatt:XQhbig4VQi1I4Awv@piiquante.doqdq
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   next();
 });
 
