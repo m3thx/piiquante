@@ -2,6 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 
+const dotenv = require("dotenv");
+dotenv.config()
+
+
 const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 
@@ -13,7 +17,7 @@ app.use(express.json()) // Donne accès à req.body
 mongoose.set('strictQuery', false); // DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7
 
 // Connection à MongoDb - OP
-mongoose.connect('mongodb+srv://mathieuhatstatt:XQhbig4VQi1I4Awv@piiquante.doqdqqn.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@piiquante.doqdqqn.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
