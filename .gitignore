@@ -134,3 +134,6 @@ dist
 # System files
 .DS_Store
 
+# Varaibles d"environnement
+.env
+
