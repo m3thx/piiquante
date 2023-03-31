@@ -2,8 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 
+// Sécurisation
+const helmet = require("helmet");  // Helmet helps you secure your Express apps by setting various HTTP headers. It's not a silver bullet, but it can help!
+const mongoSanitize = require('express-mongo-sanitize'); // Supprime $ et . au début des clés des objets de requêtes req.body, req.query or req.params
+
 const dotenv = require("dotenv");
-dotenv.config()
+dotenv.config();
 
 
 const userRoutes = require('./routes/user');
@@ -12,7 +16,13 @@ const sauceRoutes = require('./routes/sauce');
 
 const app = express();
 
-app.use(express.json()) // Donne accès à req.body
+app.use(express.json()); // Donne accès à req.body
+app.use(helmet({
+  crossOriginResourcePolicy: false,
+}));
+app.use(mongoSanitize());
+  
+
 
 mongoose.set('strictQuery', false); // DeprecationWarning: Mongoose: the `strictQuery` option will be switched back to `false` by default in Mongoose 7
 
@@ -35,9 +45,9 @@ app.use((req, res, next) => {
 });
 
 //Routes
-app.use('/api/auth', userRoutes)
-app.use('/api/sauces', sauceRoutes)
-app.use('/images', express.static(path.join(__dirname, 'images')))
+app.use('/api/auth', userRoutes);
+app.use('/api/sauces', sauceRoutes);
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 module.exports = app;
