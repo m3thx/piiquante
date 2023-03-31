@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const jwt = require('jsonwebtoken')
 
+const SECRET_KEY = process.env.SECRET_KEY
+
 
 
 // création utilisateur avec password crypté - OP
@@ -42,7 +44,7 @@ exports.login = (req, res) => {
                             //     token: 'TOKEN'
                             // }
                             { userId: user._id },
-                            'RANDOM_TOKEN_SECRET',
+                            SECRET_KEY,
                             { expiresIn: '24h' }
                         )
                     });
