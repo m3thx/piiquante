@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const jwt = require('jsonwebtoken')
 
-const SECRET_KEY = process.env.SECRET_KEY
+const TOKEN_KEY = process.env.TOKEN_KEY;
 
 
 
@@ -15,7 +15,7 @@ exports.signup = (req, res) => {
                 email: req.body.email,
                 password: hash
             })
-            console.log(user)
+            console.log(user);
             user.save()
                 .then(() => res.status(201).json({ message: 'Utilisateur crée' }))
                 .catch(error => res.status(400).json({ error }))
@@ -44,7 +44,7 @@ exports.login = (req, res) => {
                             //     token: 'TOKEN'
                             // }
                             { userId: user._id },
-                            SECRET_KEY,
+                            TOKEN_KEY,
                             { expiresIn: '24h' }
                         )
                     });
