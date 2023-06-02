@@ -29,4 +29,3 @@ Si la responsable produit de Piiquante souhaite à terme transformer l'applicati
 Afin de vous aider à réaliser ce projet, vous pouvez consulter ce [guide](https://s3.eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P6/Guide+E%CC%81tapes+Cle%CC%81s_DW_P6.pdf) d’étapes à suivre, qui contient des recommandations et des ressources pour organiser votre travail.
 
 
-### Dans le dossier front-end ouvrez le terminal et entrez npm start puis dans dans le dossier back-end ouvrez le terminal et entrez npm start et dans le navigateur allez à l'adresse [http://localhost:3000/](http://localhost:3000/)
