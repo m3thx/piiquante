@@ -24,7 +24,7 @@ Si la responsable produit de Piiquante souhaite à terme transformer l'applicati
  Tu trouveras les coding guidelines de Piiquante  [ici](https://s3.eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P6/Requirements_DW_P6.pdf).
  
 
- #### Guide d'étape
+ #### Guide d'étapes
 
 Afin de vous aider à réaliser ce projet, vous pouvez consulter ce [guide](https://s3.eu-west-1.amazonaws.com/course.oc-static.com/projects/DWJ_FR_P6/Guide+E%CC%81tapes+Cle%CC%81s_DW_P6.pdf) d’étapes à suivre, qui contient des recommandations et des ressources pour organiser votre travail.
 
